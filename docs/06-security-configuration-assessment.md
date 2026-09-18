@@ -10,12 +10,11 @@ Wazuh SCA performs configuration checks against security policies and benchmarks
 
 The objectives of this assessment were to:
 
-- Review the Security Configuration Assessment results for the Windows 11 endpoint
+- Verify the SCA policy available on the Windows 11 endpoint
+- Review the Security Configuration Assessment results
 - Evaluate the endpoint against the applicable CIS benchmark
-- Identify passed and failed security configuration checks
-- Investigate selected failed security checks
+- Identify security configuration weaknesses
 - Understand how configuration weaknesses can increase endpoint security risk
-- Identify potential remediation actions
 
 ## Test Environment
 
@@ -26,23 +25,67 @@ The objectives of this assessment were to:
 | Manager | Wazuh Manager |
 | Manager OS | Ubuntu Linux |
 | Assessment Feature | Security Configuration Assessment (SCA) |
-| Security Benchmark | CIS Microsoft Windows 11 Enterprise Benchmark v1.0.0 |
+| Security Benchmark | CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0 |
 
-## Assessment Methodology
+---
 
-The Wazuh Security Configuration Assessment module was used to evaluate the Windows 11 endpoint.
+## Step 1 - Verify the SCA Policy
 
-The assessment compared the endpoint configuration against security checks defined by the applicable CIS benchmark.
+Wazuh provides Security Configuration Assessment policies with the endpoint agent.
 
-The results were reviewed through the Wazuh Dashboard to identify passed and failed configuration checks.
+The available SCA policy files on the Windows 11 endpoint were verified using PowerShell:
 
-Selected failed checks were then investigated to better understand the associated security risk and potential remediation.
+```powershell
+Get-ChildItem "C:\Program Files (x86)\ossec-agent\ruleset\sca"
+```
 
-## Expected Result
+The Wazuh Agent service was then restarted to trigger a new assessment:
 
-The assessment should identify security configuration checks that pass or fail against the selected benchmark.
+```powershell
+Restart-Service wazuhsvc
+```
 
-Failed checks can then be reviewed to determine whether configuration changes are required to improve the security posture of the endpoint.
+### SCA Policy Verification
+
+![SCA policy verification](../screenshots/security-configuration-assessment/01-sca-policy-verification.png)
+
+*PowerShell verification of the Security Configuration Assessment policy available to the Wazuh Agent.*
+
+---
+
+## Step 2 - Review the SCA Results
+
+The Wazuh Dashboard was used to review the Security Configuration Assessment results for the Windows 11 endpoint.
+
+The endpoint configuration was evaluated against the:
+
+**CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0**
+
+The assessment produced a score of **26%**.
+
+The result indicated that many of the recommended security hardening controls were not configured according to the CIS benchmark.
+
+### SCA Dashboard Results
+
+![SCA dashboard results](../screenshots/security-configuration-assessment/02-sca-dashboard-results.png)
+
+*Wazuh Security Configuration Assessment results for the Windows 11 endpoint.*
+
+---
+
+## Assessment Results
+
+The Security Configuration Assessment identified opportunities to improve the security configuration of the Windows 11 endpoint.
+
+The 26% assessment score does not indicate that the endpoint was compromised. Instead, it indicates that many recommended hardening controls were not configured according to the CIS benchmark.
+
+Examples of security areas evaluated by the benchmark include:
+
+- Password policies
+- Auditing
+- Firewall configuration
+- Account restrictions
+- Windows security settings
 
 ## Security Relevance
 
@@ -51,3 +94,20 @@ Security Configuration Assessment helps identify insecure or non-compliant syste
 Configuration weaknesses can increase the attack surface of an endpoint and may make systems more susceptible to unauthorized access, privilege abuse, credential attacks, or other security threats.
 
 Using established security benchmarks provides a structured approach for evaluating and improving endpoint security configurations.
+
+## Skills Demonstrated
+
+- Wazuh Security Configuration Assessment
+- CIS security benchmark analysis
+- Windows endpoint security assessment
+- Security configuration review
+- Endpoint hardening analysis
+- Security posture assessment
+- PowerShell administration
+- Wazuh Dashboard investigation
+
+## Conclusion
+
+The Security Configuration Assessment demonstrated how Wazuh can evaluate a Windows endpoint against an established security benchmark.
+
+The assessment identified areas where the Windows 11 endpoint did not meet recommended CIS hardening controls, providing a baseline for identifying potential security configuration improvements.
