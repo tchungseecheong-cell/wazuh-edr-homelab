@@ -59,6 +59,11 @@ generated for accessing the Wazuh Dashboard.
 
 > Security Note: Administrator passwords and authentication
 > credentials should never be stored in a public GitHub repository.
+> ### Installation Evidence
+
+![Wazuh Manager installation](../screenshots/wazuh-manager/01-wazuh-installation.png)
+
+*Wazuh installation process on the Ubuntu Linux server, showing deployment of the Wazuh components and services.*
 
 ## Step 4 - Identify the Wazuh Server IP Address
 
@@ -72,6 +77,11 @@ This identified the IP address assigned to the Wazuh Manager.
 
 The address was then used by other systems in the lab to communicate
 with the Wazuh server and to access the dashboard.
+### Network Configuration Evidence
+
+![Wazuh Manager network configuration](../screenshots/wazuh-manager/02-manager-network-config.png)
+
+*Ubuntu network configuration used to identify the IP address assigned to the Wazuh Manager.*
 
 ## Step 5 - Access the Wazuh Dashboard
 
@@ -84,6 +94,12 @@ https://<WAZUH-MANAGER-IP>
 
 The administrator credentials generated during installation were
 used to authenticate to the dashboard.
+
+### Dashboard Verification
+
+![Wazuh Dashboard](../screenshots/wazuh-manager/03-wazuh-dashboard.png)
+
+*Successful access to the Wazuh Dashboard after deploying the Wazuh Manager.*
 
 ## Installation Verification
 
