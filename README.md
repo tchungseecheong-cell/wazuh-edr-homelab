@@ -58,6 +58,23 @@ Windows 11 endpoint against CIS security recommendations.
 ### 4. Vulnerability Detection
 Reviewed vulnerabilities identified by Wazuh on the monitored endpoint
 and examined their severity and remediation information.
+## Key Skills Demonstrated
+
+- Endpoint Detection and Response (EDR)
+- Security Information and Event Management (SIEM)
+- Windows endpoint monitoring
+- File Integrity Monitoring (FIM)
+- Windows Event Log analysis
+- Failed authentication detection
+- Security Configuration Assessment (SCA)
+- CIS security benchmark analysis
+- Vulnerability detection and remediation analysis
+- PowerShell administration
+- Security event investigation
+- Endpoint security analysis
+- Technical security documentation
+
+---
 ## Project Documentation
 
 Detailed documentation for each stage of the Wazuh EDR home lab is available below:
