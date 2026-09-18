@@ -58,6 +58,20 @@ Windows 11 endpoint against CIS security recommendations.
 ### 4. Vulnerability Detection
 Reviewed vulnerabilities identified by Wazuh on the monitored endpoint
 and examined their severity and remediation information.
+## Project Documentation
+
+Detailed documentation for each stage of the Wazuh EDR home lab is available below:
+
+1. [Lab Architecture](docs/01-lab-architecture.md)
+2. [Wazuh Manager Installation](docs/02-wazuh-manager-installation.md)
+3. [Windows Agent Deployment](docs/03-windows-agent-deployment.md)
+4. [File Integrity Monitoring](docs/04-file-integrity-monitoring.md)
+5. [Failed Windows Logon Detection](docs/05-failed-logon-detection.md)
+6. [Security Configuration Assessment](docs/06-security-configuration-assessment.md)
+7. [Vulnerability Detection](docs/07-vulnerability-detection.md)
+8. [Lessons Learned](docs/08-lessons-learned.md)
+
+---
 
 ## Repository Structure
 
