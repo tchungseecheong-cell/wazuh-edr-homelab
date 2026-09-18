@@ -41,6 +41,11 @@ to communicate with the Wazuh Manager.
 > Security Note: Environment-specific credentials, authentication keys,
 > or other sensitive information should not be published in a public
 > GitHub repository.
+> ### Agent Configuration Evidence
+
+![Windows Wazuh Agent configuration](../screenshots/windows-agent/01-agent-deployment.png)
+
+*Windows 11 Wazuh Agent configured to communicate with the Wazuh Manager. The authentication key has been redacted for security.*
 
 ## Step 3 - Start the Wazuh Agent Service
 
@@ -56,6 +61,11 @@ NET START WazuhSvc
 Starting the service allows the Wazuh Agent to establish communication
 with the Wazuh Manager.
 
+### Agent Service Verification
+![Wazuh Agent service running](../screenshots/windows-agent/02-agent-service-start.png)
+
+*PowerShell verification confirming that the Wazuh Agent service is running on the Windows 11 endpoint.*
+
 ## Step 4 - Verify Agent Connectivity
 
 The Wazuh Dashboard was used to verify that the Windows 11 endpoint
@@ -63,6 +73,12 @@ successfully connected to the Wazuh Manager.
 
 A successfully registered agent provides the Wazuh Manager with
 visibility into the endpoint and enables security monitoring features.
+
+### Agent Connectivity Verification
+
+![Windows Wazuh Agent active in dashboard](../screenshots/windows-agent/03-agent-active-dashboard.png)
+
+*Wazuh Dashboard confirming that the Windows 11 endpoint is successfully registered and actively communicating with the Wazuh Manager.*
 
 ## Monitoring Capabilities
 
